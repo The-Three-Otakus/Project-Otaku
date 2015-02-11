@@ -12,14 +12,14 @@ function love.load()
 		jump_height = 15,
 		walk_speed = 10,
 		sp=100,
-		image = love.graphics.newImage("mattMain.png") 
+		image = love.graphics.newImage("mattmain.png") 
 	}
 	world:add(player,player.x,player.y,player.image:getWidth()*1.75,player.image:getHeight()*1.75)
 	
 	gravity = 450
 	
 	ground = {
-		image = love.graphics.newImage("Background.png")
+		image = love.graphics.newImage("background.png")
 	}
 	world:add(ground,50,520,ground.image:getWidth()*4.65,80*4.65)
 end
