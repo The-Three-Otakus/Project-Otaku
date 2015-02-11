@@ -52,6 +52,7 @@ function love.update(dt)
 	for i=1, len do
 		if cols[i].normal.y == -1 then
 			player.onground = true
+			player.y_velocity = 0
 			break
 		end
 	end
