@@ -9,7 +9,7 @@ function love.load()
 		y = 300,
 		y_velocity = 0,
 		x_velocity = 0,
-		jump_height = 15,
+		jump_height = 5,
 		walk_speed = 10,
 		sp=100,
 		image = love.graphics.newImage("mattmain.png") 
@@ -40,7 +40,7 @@ function love.update(dt)
 	player.y_velocity = player.y_velocity+(gravity*dt)
 	
 	if player.onground and love.keyboard.isDown("up"," ") then
-		player.y_velocity = player.y_velocity - (player.jump_height/dt)
+		player.y_velocity = -(player.jump_height/dt)
 	end
 	
 	local x,y,cols,len = world:move(player,player.x + (player.x_velocity*dt),player.y + (player.y_velocity*dt))
@@ -55,6 +55,7 @@ function love.update(dt)
 			break
 		end
 	end
+	
 	if player.y > 650 then 
 		world:update(player,300,300,player.image:getWidth()*1.75,player.image:getHeight()*1.75)
 		player.x = 300
