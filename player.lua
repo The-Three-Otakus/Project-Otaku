@@ -51,6 +51,8 @@ function createPlayer()
 	}
 	world:add(player,player.x,player.y,player.image:getWidth()*1.75,player.image:getHeight()*1.75)
 	
+	addEntity(player)
+	
 	initPose(player.TPose)
 	
 	function player.update(dt)
